@@ -61,5 +61,38 @@ form.addEventListener("submit", (event) => {
 
   bin.addEventListener("click", () => {
     item.remove();
+
+    const existingAlert = document.querySelector(".remove-alert");
+
+    if (existingAlert) {
+      existingAlert.remove();
+    }
+
+    const removeAlert = document.createElement("div");
+    const alertIcon = document.createElement("img");
+    const alertMessage = document.createElement("span");
+    const closeButton = document.createElement("button");
+
+    removeAlert.classList.add("remove-alert");
+
+    alertIcon.classList.add("alert-icon");
+    alertIcon.src = "./assets/icons/alert.svg";
+    alertIcon.alt = "";
+    alertIcon.draggable = false;
+
+    alertMessage.textContent = "Item removido da lista";
+
+    closeButton.classList.add("close-alert");
+    closeButton.type = "button";
+    closeButton.textContent = "x";
+    closeButton.setAttribute("aria-label", "Remover mensagem de alerta");
+
+    removeAlert.append(alertIcon, alertMessage, closeButton);
+
+    document.querySelector("main").append(removeAlert);
+
+    closeButton.addEventListener("click", () => {
+      removeAlert.remove();
+    });
   });
 });
