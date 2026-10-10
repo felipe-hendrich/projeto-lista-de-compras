@@ -34,6 +34,8 @@ form.addEventListener("submit", (event) => {
 
   list.append(item);
 
+  updateRemoveButton();
+
   input.value = "";
   input.focus();
 
@@ -61,6 +63,8 @@ form.addEventListener("submit", (event) => {
 
   bin.addEventListener("click", () => {
     item.remove();
+
+    updateRemoveButton();
 
     const existingAlert = document.querySelector(".remove-alert");
 
@@ -95,4 +99,27 @@ form.addEventListener("submit", (event) => {
       removeAlert.remove();
     });
   });
+});
+
+const buttonRemove = document.createElement("button");
+
+buttonRemove.classList.add("btn-remove");
+buttonRemove.textContent = "Limpar lista de compras";
+buttonRemove.setAttribute("aria-label", "Limpar lista de compras");
+buttonRemove.type = "button";
+buttonRemove.style.display = "none";
+
+document.querySelector("main").append(buttonRemove);
+
+function updateRemoveButton() {
+  if (list.children.length > 0) {
+    buttonRemove.style.display = "block";
+  } else {
+    buttonRemove.style.display = "none";
+  }
+}
+
+buttonRemove.addEventListener("click", () => {
+  list.replaceChildren();
+  updateRemoveButton();
 });
