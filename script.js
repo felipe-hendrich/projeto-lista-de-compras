@@ -58,4 +58,8 @@ form.addEventListener("submit", (event) => {
       check.src = "./assets/icons/checkbox-default.svg";
     }
   });
+
+  bin.addEventListener("click", () => {
+    item.remove();
+  });
 });
