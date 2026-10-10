@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Compras</title>
+
+    <link rel="stylesheet" href="styles/index.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="logo">
+      <img src="assets/logo.svg" alt="logomarca Quicklist" />
+    </div>
+
+    <div class="container">
+      <header>
+        <a href="#">Voltar</a>
+        <h1>Compras da semana</h1>
+      </header>
+    </div>
+    <main>
+      <form>
+        <input type="text" placeholder="Adicione um novo item" id="item-name" />
+        <button type="submit" id="btn" class="button">Adicionar item</button>
+      </form>
+
+      <div class="list-shopping">
+        <ul class="list-field"></ul>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
