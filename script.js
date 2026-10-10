@@ -36,4 +36,26 @@ form.addEventListener("submit", (event) => {
 
   input.value = "";
   input.focus();
+
+  let isSelected = false;
+
+  check.addEventListener("click", () => {
+    isSelected = !isSelected;
+
+    check.src = !isSelected
+      ? "./assets/icons/checkbox-default.svg"
+      : "./assets/icons/checkbox-select.svg";
+  });
+
+  check.addEventListener("mouseenter", () => {
+    if (!isSelected) {
+      check.src = "./assets/icons/checkbox-hover.svg";
+    }
+  });
+
+  check.addEventListener("mouseleave", () => {
+    if (!isSelected) {
+      check.src = "./assets/icons/checkbox-default.svg";
+    }
+  });
 });
